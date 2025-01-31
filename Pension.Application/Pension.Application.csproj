@@ -1,8 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\Pension.Application.Tests\Pension.Application.Tests.csproj" />
+    <PackageReference Include="FluentValidation" Version="11.11.0" />
+    <ProjectReference Include="..\Pension.Domain\Pension.Domain.csproj" />
   </ItemGroup>
+
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
