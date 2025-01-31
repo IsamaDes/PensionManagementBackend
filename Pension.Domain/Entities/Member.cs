@@ -11,6 +11,9 @@ namespace Pension.Domain.Entities
         public required DateTime DateOfBirth { get; set; }
         public required string Email { get; set; }
         public string? PhoneNumber { get; set; }
+
+        // Add a soft delete flag
+        public bool IsDeleted { get; set; }
     }
 
     public class MemberValidator : AbstractValidator<Member>

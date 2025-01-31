@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Pension.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a790fd852713be1784416d1404f28ab43083c7f8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c6c605d983abac40fd5cd7e34e2c12617e4dafce")]
 [assembly: System.Reflection.AssemblyProductAttribute("Pension.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Pension.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

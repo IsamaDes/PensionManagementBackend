@@ -70,5 +70,61 @@ namespace Pension.API.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while creating the member." });
             }
         }
+
+
+        // PUT: api/v1/members/{id}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateMember(Guid id, [FromBody] MemberDto memberDto)
+        {
+            if (memberDto == null)
+            {
+                return BadRequest(new { message = "Member data is required." });
+            }
+
+            var existingMember = await _memberRepository.GetByIdAsync(id);
+            if (existingMember == null)
+            {
+                return NotFound(new { message = "Member not found." });
+            }
+
+            existingMember.FirstName = memberDto.FirstName;
+            existingMember.LastName = memberDto.LastName;
+            existingMember.DateOfBirth = memberDto.DateOfBirth;
+            existingMember.Email = memberDto.Email;
+
+            try
+            {
+                await _memberRepository.UpdateAsync(existingMember);
+                return Ok(existingMember);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while updating the member." });
+            }
+        }
+
+        // DELETE: api/v1/members/{id}
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteMember(Guid id)
+        {
+            var member = await _memberRepository.GetByIdAsync(id);
+            if (member == null)
+            {
+                return NotFound(new { message = "Member not found." });
+            }
+
+            try
+            {
+                // Soft delete: Set IsDeleted flag
+                member.IsDeleted = true;
+                await _memberRepository.UpdateAsync(member);
+                return NoContent();  // 204 No Content - success
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, new { message = "An error occurred while deleting the member." });
+            }
+        }
+
     }
 }

@@ -32,7 +32,7 @@
     <ProjectReference Include="..\Pension.Infrastructure\Pension.Infrastructure.csproj" />
     <ProjectReference Include="..\Pension.Application\Pension.Application.csproj" />
     <ProjectReference Include="..\Pension.Domain\Pension.Domain.csproj" />
-
   </ItemGroup>
+
 
 </Project>

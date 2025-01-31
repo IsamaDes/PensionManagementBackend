@@ -1,7 +1,7 @@
 using Pension.Domain.Entities;
 using Pension.Domain.Repositories;
 
-namespace Pensions.Domain.Services
+namespace Pension.Domain.Services
 {
     public class ContributionService
     {
