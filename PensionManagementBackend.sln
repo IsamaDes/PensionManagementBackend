@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pension.API.Tests", "Pensio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pension.Infrastructure.Tests", "Pension.Infrastructure.Tests\Pension.Infrastructure.Tests.csproj", "{12C593AF-97C4-4145-8F1E-FC860359A976}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pension.Domain.Tests", "Pension.Domain.Tests\Pension.Domain.Tests.csproj", "{534870E9-1F3F-46B1-9E47-659BDF686B90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pension.Tests", "Pension.Tests\Pension.Tests.csproj", "{534870E9-1F3F-46B1-9E47-659BDF686B90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pension.Application.Tests", "Pension.Application.Tests\Pension.Application.Tests.csproj", "{DAAD99A2-DE67-4679-9103-1578C0658718}"
 EndProject

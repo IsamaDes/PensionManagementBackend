@@ -13,6 +13,8 @@
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/Pension.API.Tests.pdb
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/Azure.Core.dll
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/Azure.Identity.dll
+/Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/Castle.Core.dll
+/Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/FluentAssertions.dll
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/FluentValidation.dll
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/Hangfire.AspNetCore.dll
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/Hangfire.Core.dll
@@ -76,6 +78,7 @@
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/Microsoft.VisualStudio.TestPlatform.Common.dll
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/testhost.dll
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/Microsoft.Win32.SystemEvents.dll
+/Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/Moq.dll
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/Newtonsoft.Json.dll
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/Newtonsoft.Json.Bson.dll
 /Users/mac/PensionManagementBackend/Pension.API.Tests/bin/Debug/net8.0/NuGet.Frameworks.dll
