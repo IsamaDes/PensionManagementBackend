@@ -58,6 +58,25 @@ namespace Pension.Domain.Services
 
             // Add the contribution to the repository
             await _contributionRepository.AddAsync(contribution);
+
+            // Calculate benefits if the member has met the eligibility criteria
+            await CalculateBenefitsAsync(memberId);
+        }
+
+        private async Task CalculateBenefitsAsync(Guid memberId)
+        {
+            // Fetch all contributions for the member
+            var contributions = await _contributionRepository.GetByMemberIdAsync(memberId);
+
+            // Calculate the total contribution value
+            decimal totalContribution = contributions.Sum(c => c.Amount);
+
+            // Assuming the member is eligible for benefits after 12 months of contributions
+            if (contributions.Count() >= 12)
+            {
+                decimal benefitAmount = totalContribution * 0.1m; // Example benefit calculation (10% of total contribution)
+                                                                  // Save or return the benefit amount, or update member's status
+            }
         }
     }
 
