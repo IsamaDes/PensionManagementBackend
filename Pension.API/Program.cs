@@ -4,9 +4,40 @@ using Hangfire;
 using Pension.Infrastructure.Repositories;
 using Pension.Domain.Repositories;
 using Pension.Infrastructure;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Pension.Application.Services.Auth;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+// Add JWT Authentication
+var jwtKey = builder.Configuration["JwtSettings:Secret"];
+var jwtIssuer = builder.Configuration["JwtSettings:Issuer"];
+var jwtAudience = builder.Configuration["JwtSettings:Audience"];
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtAudience,
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey))
+        };
+    });
+
+builder.Services.AddSingleton<JwtTokenService>();
+
+builder.Services.AddAuthorization();
+
+
 
 // Register the DbContext with SQL Server
 builder.Services.AddDbContext<PensionsDbContext>(options =>

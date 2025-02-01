@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Pension.Application.Dtos;
 using Pension.Domain.Repositories;
@@ -7,6 +8,7 @@ using System;
 
 namespace Pension.API.Controllers
 {
+    [Authorize] // Require authentication for all endpoints
     [ApiController]
     [Route("api/v1/members")]  // API versioning applied here
     public class MembersController : ControllerBase
