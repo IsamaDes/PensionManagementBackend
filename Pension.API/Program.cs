@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using Pension.Application.Services.Auth;
+using Hangfire.SqlServer;
+
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -44,7 +47,14 @@ builder.Services.AddDbContext<PensionsDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PensionsDb"))
 );
 
-builder.Services.AddHangfire(config => config.UseSqlServerStorage(builder.Configuration.GetConnectionString("PensionsDb")));
+// Add Hangfire configuration with custom retry and poll interval
+builder.Services.AddHangfire(config => config.UseSqlServerStorage(builder.Configuration.GetConnectionString("PensionsDb"), new SqlServerStorageOptions
+{
+    InvisibilityTimeout = TimeSpan.FromMinutes(5),  // Custom retry interval
+    QueuePollInterval = TimeSpan.FromSeconds(30)   // How often Hangfire checks for jobs
+}));
+
+// Add Hangfire server
 builder.Services.AddHangfireServer();
 
 // Add other services
