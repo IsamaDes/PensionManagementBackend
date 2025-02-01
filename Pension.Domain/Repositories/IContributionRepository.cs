@@ -23,5 +23,9 @@ namespace Pension.Domain.Repositories
 
         // Get all contributions (you can add filtering or pagination here)
         Task<IEnumerable<Contribution>> GetAllAsync();
+
+        // Get contributions by month and year
+        Task<Contribution?> GetByMemberAndMonthAsync(Guid memberId, int month, int year);
+
     }
 }
